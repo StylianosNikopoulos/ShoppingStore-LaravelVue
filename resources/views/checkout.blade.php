@@ -6,5 +6,9 @@
         
     </checkout>
 </div>
+<script>
+    window.stripePublicKey = "{{ env('STRIPE_KEY') }}";
+</script>
+
 @endsection
 

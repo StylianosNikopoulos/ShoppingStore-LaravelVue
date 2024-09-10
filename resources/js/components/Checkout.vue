@@ -73,9 +73,14 @@ export default {
             this.totalPrice = (this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0) ).toFixed(2);
         },
         async setupStripe() {
-            const stripe = await loadStripe('pk_test_51PlrUvBlT4Q7uMDZXImXsCrl7avLwEZcU6HZJp7NW1YSmZC8d2vWP7ghVL1MGzjxgOcIPWvRMExdzWjMBRaz3NCi00Wp4tPtZ2');
+            const stripe = await loadStripe(window.stripePublicKey); 
             
             document.getElementById('checkout-button').addEventListener('click', async () => {
+                if (!this.validateUserInfo()) {  
+                    toastr.error('Please fill in all required fields.');
+                    return;
+                }
+
                 try {
                     const response = await axios.post('/api/stripe/create-checkout-session', {
                         user: this.user,
@@ -99,6 +104,9 @@ export default {
                     toastr.error('Failed to checkout. Please try again.');
                 }
             });
+        },
+        validateUserInfo() {
+            return this.user.name && this.user.country && this.user.address && this.user.email && this.user.phone;
         }
     }
 };
