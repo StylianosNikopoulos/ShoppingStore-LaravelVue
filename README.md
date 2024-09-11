@@ -10,7 +10,6 @@ This is a full-stack e-commerce web application built with **Laravel** and **Vue
 - **Browse Products:** Explore various products available for purchase.
 - **Add to Cart:** Add products to your shopping cart.
 - **Checkout:** Proceed to checkout and complete payments using Stripe.
-- **Order History:** View past orders and their statuses.
 
 ### Admin Features
 - **Dashboard:** View all products and manage inventory.
@@ -31,7 +30,7 @@ This is a full-stack e-commerce web application built with **Laravel** and **Vue
 Make sure you have the following installed:
 - [PHP](https://www.php.net/manual/en/install.php) (7.4 or higher)
 - [Composer](https://getcomposer.org/)
-- [Node.js](https://nodejs.org/)
+- [Vue.js](https://vuejs.org/)
 - [NPM](https://www.npmjs.com/get-npm)
 - [MySQL](https://www.mysql.com/) 
 
