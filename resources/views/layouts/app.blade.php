@@ -19,13 +19,15 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/products">Products</a></li>
                     <li><a href="/about">About</a></li>
-                    {{-- @if (auth()->check() && auth()->user()->isAdmin())
-                    <li><a href="/admin/dashboard">Admin</a></li>
-                     @endif --}}
-                    @if (!auth()->check())
+                    @auth
+                        @if (auth()->user()->role === 'admin')
+                            <li><a href="/admin/dashboard">Admin</a></li>
+                        @endif
+                    @endauth                    
+                @if (!auth()->check())
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register" class="register-btn">Register</a></li>
-                @else
+                     @else
                     <li><a href="/cart">Cart</a></li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST" style="display: inline;">

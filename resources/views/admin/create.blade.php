@@ -3,7 +3,7 @@
 @section('content')
 <body>
     <div id="app">
-        <admin-dashboard :initial-products="{{ json_encode($products) }}"></admin-dashboard> 
+        <admin-create></admin-create>
     </div>
 </body>
 @endsection

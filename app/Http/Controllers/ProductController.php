@@ -16,4 +16,9 @@ class ProductController extends Controller
         return view('about');
     }
 
+    public function createProduct(Request $request){
+
+
+    }
+
 }

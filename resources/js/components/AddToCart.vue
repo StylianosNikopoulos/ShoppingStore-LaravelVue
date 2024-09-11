@@ -215,7 +215,7 @@ export default {
 }
 
 .checkout-button {
-    background-color: #4caf50;
+    background-color: #ff5722;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -226,7 +226,7 @@ export default {
 }
 
 .checkout-button:hover {
-    background-color: #45a049;
+    background-color: #ff3c00;
 }
 
 .empty-cart {

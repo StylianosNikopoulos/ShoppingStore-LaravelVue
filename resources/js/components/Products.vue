@@ -143,7 +143,7 @@ export default {
 }
 
 .add-to-cart-btn {
-    background-color: #4caf50;
+    background-color: #ff5722;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -154,6 +154,6 @@ export default {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #45a049;
+    background-color: #ff3c00;
 }
 </style>

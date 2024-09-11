@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\StripeController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Auth;
 
 // Home route
@@ -32,8 +33,21 @@ Route::post('/api/stripe/create-checkout-session', [StripeController::class, 'cr
 Route::get('/stripe/success', [StripeController::class, 'success'])->name('payment-success')->middleware('auth:sanctum');;
 Route::get('/stripe/cancel', [StripeController::class, 'cancel'])->name('payment-cancelled')->middleware('auth:sanctum');;
 
-// Admin routes
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin');
+
+
+//Admin routes
+Route::middleware(['auth', AdminMiddleware::class])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'adminProducts'])->name('admin.dashboard'); 
+    Route::post('/admin/products', [AdminController::class, 'store'])->name('products.store'); 
+    Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+    Route::get('/admin/update/{id}', [AdminController::class, 'edit'])->name('admin.update'); 
+    Route::get('/admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit'); 
+    Route::delete('/admin/products/{id}', [AdminController::class, 'destroy'])->name('products.destroy');
+    Route::put('/admin/products/{id}', [AdminController::class, 'update'])->name('products.update'); 
+
+});
+
+
 
 // Auth routes
 Route::middleware([

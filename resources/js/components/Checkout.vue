@@ -173,7 +173,7 @@ h3 {
 }
 
 .buy-now-button {
-    background-color: #4caf50;
+    background-color: #ff5722;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -184,6 +184,6 @@ h3 {
 }
 
 .buy-now-button:hover {
-    background-color: #45a049;
+    background-color: #ff3c00;
 }
 </style>
