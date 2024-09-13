@@ -63,7 +63,6 @@
   </script>
   
   <style scoped>
-  /* Style for the update form */
   .create-container {
     display: flex;
     flex-direction: column;
