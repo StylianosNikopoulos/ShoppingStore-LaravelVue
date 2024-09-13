@@ -9,7 +9,7 @@ class AdminController extends Controller
 {
     public function adminProducts(){
         $products = Products::all();
-        return view('admin.dashboard', compact('products')); // Pass products to the view
+        return view('admin.dashboard', compact('products')); 
     }
 
 
@@ -29,7 +29,7 @@ class AdminController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagePath = $image->store('images', 'public'); // Store image in 'public/images' directory
+            $imagePath = $image->store('images', 'public'); 
         }
 
         // Create product
@@ -55,7 +55,7 @@ class AdminController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string', 'max:255'],
             'price' => ['required', 'numeric'],
-            'image' => ['nullable', 'image'], // Make image optional
+            'image' => ['nullable', 'image'], 
         ]);
     
         $product->name = $request->name;
@@ -79,12 +79,10 @@ class AdminController extends Controller
         $product = Products::findOrFail($id);
         $product->delete();
 
-        // Return a JSON response for API calls
         if (request()->wantsJson()) {
             return response()->json(['message' => 'Product deleted successfully.'], 200);
         }
 
-        // Redirect for web requests
         return redirect()->route('admin.dashboard')->with('success', 'Product deleted successfully.');
     }
 
