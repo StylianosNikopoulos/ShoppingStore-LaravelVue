@@ -84,7 +84,6 @@ export default {
 </script>
 
 <style scoped>
-/* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -92,7 +91,6 @@ body {
     color: #333;
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     height: 90vh;
@@ -130,7 +128,7 @@ body {
 .hero-subtitle {
     font-size: 1.5em;
     margin: 20px 0;
-    animation: fadeInUp 2s ease-out 0.5s; /* Animation for subtitle with delay */
+    animation: fadeInUp 2s ease-out 0.5s; 
 }
 
 .hero-content:hover {
@@ -166,7 +164,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Features Section */
 .features {
     padding: 60px 20px;
     background-color: #f8f8f8;
@@ -213,7 +210,6 @@ body {
     font-size: 14px;
 }
 
-/* Special Offers Section */
 .special-offers {
     padding: 60px 20px;
     background-color: #fff;
