@@ -20,7 +20,7 @@ This is a full-stack e-commerce web application built with **Laravel** and **Vue
 
 - **Backend:** Laravel (PHP)
 - **Frontend:** Vue.js
-- **Database:** MySQL (or any other supported database)
+- **Database:** MySQL 
 - **Payment Gateway:** Stripe
 
 ## Installation
